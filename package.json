@@ -1,0 +1,17 @@
+{
+  "name": "pr-reviewer-randomizer-slack-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/client": "^3.5.4",
+    "lodash": "^4.15.0",
+    "slack-client": "^2.0.6",
+    "slackbots": "^0.5.2"
+  }
+}
