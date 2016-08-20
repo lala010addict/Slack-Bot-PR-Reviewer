@@ -6,8 +6,6 @@ var RtmClient = require('@slack/client').RtmClient;
 
 var _ = require('lodash')
 
-var token = key.api.key || '';
-
 var rtm = new RtmClient(token, { logLevel: 'debug' });
 rtm.start();
 
