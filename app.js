@@ -25,9 +25,6 @@ var RTM_EVENTS = require('@slack/client').RTM_EVENTS;
 rtm.on(RTM_EVENTS.MESSAGE, function(message) {
   console.log(message, 'message')
 
-
-
-
   var str = message.text || '';
   // <@U22QZJNKA> is the my bot id. I am checking to see if someone @ my bot
 
@@ -50,7 +47,6 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
   var params = {
     text: msg,
     channel_id: message.channel,
-
   }
   if (n) {
     // This will send the message to the channel identified by id 'G20TSFYAX'
