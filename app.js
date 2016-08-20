@@ -10,6 +10,12 @@ var rtm = new RtmClient(token, { logLevel: 'debug' });
 rtm.start();
 
 
+
+var express = require('express');
+var app = express();
+
+app.set('port', (process.env.PORT || 5000));
+
 var CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
 
 rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, function(rtmStartData) {
@@ -63,6 +69,34 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
   }
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
