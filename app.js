@@ -43,7 +43,6 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
 
   }
 
-
   var params = {
     text: msg,
     channel_id: message.channel,
