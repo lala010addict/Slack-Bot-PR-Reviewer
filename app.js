@@ -118,8 +118,9 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
 
 
 // after depoly run :
-
-
+//git push heroku master
+//heroku logs --tail
+//heroku config:set SLACK_API_TOKEN=XXX
 // heroku ps:scale web=0
 // heroku ps:scale worker=1
 
