@@ -3,10 +3,8 @@ ASSERT(process.env.SLACK_API_TOKEN || 'development');
 
 
 var http = require('http');
-
-// Configure our HTTP server to respond with Hello World to all requests.
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
+var server = http.createServer(function(request, response) {
+  response.writeHead(200, { "Content-Type": "text/plain" });
   response.end("meow");
 });
 
@@ -52,15 +50,37 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
 
   var n = str.includes("<@U22QZJNKA>")
 
-  var array = str.split(', ');
+  var array = str.split(' ');
 
-  var splicedArray = array.splice(1);
+  var names = [];
+
+  _.each(array, function(item) {
+    if (item.includes('@')) {
+      names.push(item)
+    }
+  })
+
+ console.log(names, 'namesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnames')
+ 
+
+ var splicedArray = _.remove(names, function(n) {
+  return n === '<@U22QZJNKA>:' || n === '<@U22QZJNKA>' 
+});
+
+
+
+  // var index = names.indexOf('<@U22QZJNKA>:');
+  // var splicedArray;
+  // if (index > -1) {
+  //   splicedArray = names.splice(index, 1);
+  // }
+ console.log(names, 'splicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArray')
   var lucky;
   var msg
 
 
-  if (splicedArray.length > 1) {
-    lucky = _.sampleSize(splicedArray, 2)
+  if (names.length > 1) {
+    lucky = _.sampleSize(names, 2)
     msg = ':laser_cat: meow meow :thinking_face: ??? ' + lucky[0] + ' & ' + lucky[1] + ' today is your lucky day RUFFF RUFFFF :doge:!! :partyparrot: :beers::dealwithitparrot::hypnotoad: '
 
   }
