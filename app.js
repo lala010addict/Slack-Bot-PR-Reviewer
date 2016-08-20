@@ -60,21 +60,13 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
     }
   })
 
- console.log(names, 'namesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnames')
- 
-
- var splicedArray = _.remove(names, function(n) {
-  return n === '<@U22QZJNKA>:' || n === '<@U22QZJNKA>' 
-});
+  console.log(names, 'namesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnamesnames')
 
 
-
-  // var index = names.indexOf('<@U22QZJNKA>:');
-  // var splicedArray;
-  // if (index > -1) {
-  //   splicedArray = names.splice(index, 1);
-  // }
- console.log(names, 'splicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArray')
+  var splicedArray = _.remove(names, function(n) {
+    return n === '<@U22QZJNKA>:' || n === '<@U22QZJNKA>'
+  });
+  console.log(names, 'splicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArraysplicedArray')
   var lucky;
   var msg
 
@@ -124,9 +116,10 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
 
 
 
+// run this after deploy to heroku
 
-
-
+// heroku ps:scale web=0
+// heroku ps:scale worker=1
 
 
 
