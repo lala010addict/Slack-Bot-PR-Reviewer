@@ -1,5 +1,18 @@
 var ASSERT = require('assert');
-ASSERT(process.env.SLACK_API_TOKEN);
+ASSERT(process.env.SLACK_API_TOKEN || 'development');
+
+
+var http = require('http');
+
+// Configure our HTTP server to respond with Hello World to all requests.
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.end("meow");
+});
+
+
+server.listen(process.env.PORT || 5000)
+
 
 var key = require('./config')
 
