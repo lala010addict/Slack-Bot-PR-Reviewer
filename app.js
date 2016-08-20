@@ -25,8 +25,9 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
 
 
 
-  var str = message.text;
+  var str = message.text || '';
   // <@U22QZJNKA> is the my bot id. I am checking to see if someone @ my bot
+
   var n = str.includes("<@U22QZJNKA>")
 
   var array = str.split(', ');
