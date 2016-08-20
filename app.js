@@ -1,3 +1,6 @@
+var ASSERT = require('assert');
+ASSERT(process.env.SLACK_API_TOKEN);
+
 var key = require('./config')
 
 var token = key.api.key || '';
