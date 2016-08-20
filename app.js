@@ -117,9 +117,11 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
 
 
 
+// after depoly run :
 
 
-
+// heroku ps:scale web=0
+// heroku ps:scale worker=1
 
 
 
