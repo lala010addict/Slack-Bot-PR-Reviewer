@@ -13,7 +13,9 @@ rtm.start();
 var CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
 
 rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, function(rtmStartData) {
+
   console.log(`Logged in as ${rtmStartData.self.name} of team ${rtmStartData.team.name}, but not yet connected to a channel`);
+
 });
 
 
@@ -22,6 +24,7 @@ var RTM_EVENTS = require('@slack/client').RTM_EVENTS;
 // Listens to all `message` events from the team
 rtm.on(RTM_EVENTS.MESSAGE, function(message) {
   console.log(message, 'message')
+
 
 
 
@@ -46,7 +49,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function(message) {
 
   var params = {
     text: msg,
-    channel_id: 'G20TSFYAX',
+    channel_id: message.channel,
 
   }
   if (n) {
